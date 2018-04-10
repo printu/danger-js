@@ -18,6 +18,8 @@ export function pullRequestParser(address: string): PullRequestParts | null {
       }
     }
 
+    // TODO: GitLab
+
     // shape: http://github.com/proj/repo/pull/1
     if (includes(components.path, "pull")) {
       return {

@@ -13,6 +13,10 @@
 
 ## Master
 
+<!--
+// TODO: GitLab
+-->
+
 ## 3.4.5
 
 * Don't print error for commit status when there was no error [@sunshinejr][]

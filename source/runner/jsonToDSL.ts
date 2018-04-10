@@ -17,12 +17,14 @@ export const jsonToDSL = async (dsl: DangerDSLJSONType): Promise<DangerDSLType> 
   const platformExists = [dsl.github, dsl.bitbucket_server].some(p => !!p)
   const github = dsl.github && githubJSONToGitHubDSL(dsl.github, api as GitHubNodeAPI)
   const bitbucket_server = dsl.bitbucket_server
+  // TODO: GitLab
   // const gitlab = dsl.gitlab && githubJSONToGitLabDSL(dsl.gitlab, api)
 
   let git: GitDSL
   if (!platformExists) {
     const localPlatform = new LocalGit(dsl.settings.cliArgs)
     git = await localPlatform.getPlatformGitRepresentation()
+    // TODO: GitLab
   } else if (process.env["DANGER_BITBUCKETSERVER_HOST"]) {
     git = bitBucketServerGitDSL(bitbucket_server!, dsl.git, api as BitBucketServerAPI)
   } else {
@@ -35,6 +37,7 @@ export const jsonToDSL = async (dsl: DangerDSLJSONType): Promise<DangerDSLType> 
     // otherwise everyone would need to have a check for GitHub/BBS in every Dangerfile
     // which just doesn't feel right.
     github: github!,
+    // TODO: GitLab
     bitbucket_server: bitbucket_server!,
     utils: {
       sentence,
@@ -44,6 +47,7 @@ export const jsonToDSL = async (dsl: DangerDSLJSONType): Promise<DangerDSLType> 
 }
 
 const apiForDSL = (dsl: DangerDSLJSONType): GitHubNodeAPI | BitBucketServerAPI => {
+  // TODO: GitLab
   if (process.env["DANGER_BITBUCKETSERVER_HOST"]) {
     return new BitBucketServerAPI(dsl.bitbucket_server!.metadata, bitbucketServerRepoCredentialsFromEnv(process.env))
   }

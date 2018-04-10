@@ -62,6 +62,8 @@ export async function getPullRequestIDForBranch(metadata: RepoMetaData, env: Env
     return 0
   }
 
+  // TODO: Add GitLab
+
   const token = env["DANGER_GITHUB_API_TOKEN"]
   if (!token) {
     return 0

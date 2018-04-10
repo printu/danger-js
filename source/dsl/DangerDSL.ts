@@ -2,6 +2,7 @@
 
 import { GitDSL, GitJSONDSL } from "../dsl/GitDSL"
 import { GitHubDSL } from "../dsl/GitHubDSL"
+// TODO: Gitlab import { GitLabDSL } from "../dsl/GitLabDSL"
 import { BitBucketServerDSL, BitBucketServerJSONDSL } from "../dsl/BitBucketServerDSL"
 import { DangerUtilsDSL } from "./DangerUtilsDSL"
 import { CliArgs } from "../dsl/cli-args"
@@ -53,6 +54,7 @@ export interface DangerDSLJSONType {
   git: GitJSONDSL
   /** The data only version of GitHub DSL */
   github?: GitHubDSL
+  // TODO: Gitlab
   /** The data only version of BitBucket Server DSL */
   bitbucket_server?: BitBucketServerJSONDSL
   /**
@@ -72,6 +74,7 @@ export interface DangerDSLJSONType {
       /** Optional headers to add to a request */
       additionalHeaders: any
     }
+    // TODO: Gitlab
     /**
      * This is still a bit of a WIP, but this should
      * pass args/opts from the original CLI call through
@@ -112,6 +115,8 @@ export interface DangerDSLType {
    */
   readonly github: GitHubDSL
 
+  // TODO: Gitlab
+
   /**
    *  The BitBucket Server metadata. This covers things like PR info,
    *  comments and reviews on the PR, related issues, commits, comments
@@ -142,6 +147,7 @@ export class DangerDSL {
       case "GitHub":
       case "Fake": // Testing only
         this.github = platformDSL
+      // TODO: Gitlab
       case "BitBucketServer":
         this.bitbucket_server = platformDSL
     }

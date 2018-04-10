@@ -2,6 +2,7 @@ import { Env, CISource } from "../ci_source/ci_source"
 import { GitJSONDSL, GitDSL } from "../dsl/GitDSL"
 import { GitHub } from "./GitHub"
 import { GitHubAPI } from "./github/GitHubAPI"
+// TODO: GitLab - import { GitLab } from "./GitLab"
 import { BitBucketServer } from "./BitBucketServer"
 import { BitBucketServerAPI, bitbucketServerRepoCredentialsFromEnv } from "./bitbucket_server/BitBucketServerAPI"
 
@@ -81,6 +82,8 @@ export function getPlatformForEnv(env: Env, source: CISource, requireAuth = true
     const bbs = new BitBucketServer(api)
     return bbs
   }
+
+  // TODO: GitLab
 
   // GitHub
   const ghToken = env["DANGER_GITHUB_API_TOKEN"]

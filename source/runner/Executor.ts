@@ -19,6 +19,7 @@ import {
   inlineTemplate as githubResultsInlineTemplate,
   fileLineToString,
 } from "./templates/githubIssueTemplate"
+// TODO: GitLab
 import {
   template as bitbucketServerTemplate,
   inlineTemplate as bitbucketServerInlineTemplate,
@@ -228,6 +229,7 @@ export class Executor {
       const inlineLeftovers = await this.sendInlineComments(inline, git, previousComments)
       const regular = regularResults(results)
       const mergedResults = sortResults(mergeResults(regular, inlineLeftovers))
+      // TODO: GitLab
       const comment = process.env["DANGER_BITBUCKETSERVER_HOST"]
         ? bitbucketServerTemplate(dangerID, mergedResults)
         : githubResultsTemplate(dangerID, mergedResults)

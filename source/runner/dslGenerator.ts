@@ -6,6 +6,8 @@ export const jsonDSLGenerator = async (platform: Platform): Promise<DangerDSLJSO
   const git = await platform.getPlatformGitRepresentation()
   const platformDSL = await platform.getPlatformDSLRepresentation()
 
+  // TODO: GitLab
+
   return {
     git,
     [platform.name === "BitBucketServer" ? "bitbucket_server" : "github"]: platformDSL,

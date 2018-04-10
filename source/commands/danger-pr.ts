@@ -34,6 +34,7 @@ program
   .on("--help", () => {
     log("\n")
     log("  Docs:")
+    // TODO: Gitlab
     if (!process.env["DANGER_GITHUB_API_TOKEN"] && !process.env["DANGER_BITBUCKETSERVER_HOST"]) {
       log("")
       log("     You don't have a DANGER_GITHUB_API_TOKEN set up, this is optional, but TBH, you want to do this.")

@@ -317,6 +317,9 @@ declare module "danger" {
   }
 
   // Please don't have includes in here that aren't inside the DSL folder, or the d.ts/flow defs break
+
+  // TODO: Gitlab import { GitLabDSL } from "../dsl/GitLabDSL"
+
   /**
    * The shape of the JSON passed between Danger and a subprocess. It's built
    * to be expanded in the future.
@@ -364,6 +367,7 @@ declare module "danger" {
     git: GitJSONDSL
     /** The data only version of GitHub DSL */
     github?: GitHubDSL
+    // TODO: Gitlab
     /** The data only version of BitBucket Server DSL */
     bitbucket_server?: BitBucketServerJSONDSL
     /**
@@ -383,6 +387,7 @@ declare module "danger" {
         /** Optional headers to add to a request */
         additionalHeaders: any
       }
+      // TODO: Gitlab
       /**
        * This is still a bit of a WIP, but this should
        * pass args/opts from the original CLI call through
@@ -422,6 +427,8 @@ declare module "danger" {
      *  typings for those webhooks.
      */
     readonly github: GitHubDSL
+
+    // TODO: Gitlab
 
     /**
      *  The BitBucket Server metadata. This covers things like PR info,
@@ -1031,6 +1038,7 @@ declare module "danger" {
     number: number
   }
 
+  // TODO: GitLab
   /** Key details about a repo */
   interface RepoMetaData {
     /** A path like "artsy/eigen" */
