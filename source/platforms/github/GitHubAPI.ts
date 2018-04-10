@@ -9,7 +9,7 @@ import { GitHubPRDSL, GitHubUser } from "../../dsl/GitHubDSL"
 import { dangerSignaturePostfix, dangerIDToString } from "../../runner/templates/githubIssueTemplate"
 import { api as fetch } from "../../api/fetch"
 import { Comment } from "../platform"
-import { RepoMetaData } from "../../dsl/BitBucketServerDSL"
+import { RepoMetaData } from "../../dsl/RepoMetaData"
 
 // The Handle the API specific parts of the github
 

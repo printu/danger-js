@@ -6,15 +6,6 @@ import * as GitHub from "@octokit/rest"
 
 declare module "danger" {
   type MarkdownString = string
-
-  /** Key details about a repo */
-  interface RepoMetaData {
-    /** A path like "artsy/eigen" */
-    repoSlug: string
-    /** The ID for the pull/merge request "11" */
-    pullRequestID: string
-  }
-
   // This is `danger.bitbucket_server` inside the JSON
 
   interface BitBucketServerJSONDSL {
@@ -1038,6 +1029,14 @@ declare module "danger" {
     repo: string
     /** The PR number */
     number: number
+  }
+
+  /** Key details about a repo */
+  interface RepoMetaData {
+    /** A path like "artsy/eigen" */
+    repoSlug: string
+    /** The ID for the pull/merge request "11" */
+    pullRequestID: string
   }
 
   /**

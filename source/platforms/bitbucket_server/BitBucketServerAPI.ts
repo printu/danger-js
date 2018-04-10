@@ -9,8 +9,8 @@ import {
   JIRAIssue,
   BitBucketServerPRActivity,
   BitBucketServerDiff,
-  RepoMetaData,
 } from "../../dsl/BitBucketServerDSL"
+import { RepoMetaData } from "../../dsl/RepoMetaData"
 
 import { Env } from "../../ci_source/ci_source"
 import { dangerSignaturePostfix, dangerIDToString } from "../../runner/templates/bitbucketServerTemplate"

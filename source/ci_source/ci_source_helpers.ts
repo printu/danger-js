@@ -1,12 +1,12 @@
 import { Env } from "./ci_source"
 import { GitHubAPI } from "../platforms/github/GitHubAPI"
 import { GitHubPRDSL } from "../dsl/GitHubDSL"
+import { RepoMetaData } from "../dsl/RepoMetaData"
 import * as find from "lodash.find"
 import {
   BitBucketServerAPI,
   bitbucketServerRepoCredentialsFromEnv,
 } from "../platforms/bitbucket_server/BitBucketServerAPI"
-import { RepoMetaData } from "../dsl/BitBucketServerDSL"
 
 /**
  * Validates that all ENV keys exist and have a length

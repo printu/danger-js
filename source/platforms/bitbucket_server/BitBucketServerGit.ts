@@ -1,10 +1,6 @@
 import { GitDSL, GitJSONDSL } from "../../dsl/GitDSL"
-import {
-  BitBucketServerCommit,
-  BitBucketServerDSL,
-  BitBucketServerDiff,
-  RepoMetaData,
-} from "../../dsl/BitBucketServerDSL"
+import { BitBucketServerCommit, BitBucketServerDSL, BitBucketServerDiff } from "../../dsl/BitBucketServerDSL"
+import { RepoMetaData } from "../../dsl/RepoMetaData"
 import { GitCommit } from "../../dsl/Commit"
 
 import { BitBucketServerAPI } from "../bitbucket_server/BitBucketServerAPI"
